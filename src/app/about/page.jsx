@@ -3,11 +3,10 @@ import Brain from "@/components/brain";
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 
-
 const About = () => {
-  const containerRef=useRef()
-  const{scrollYProgress} = useScroll({container:containerRef})
-     return (
+  const containerRef = useRef();
+  const { scrollYProgress } = useScroll({ container: containerRef });
+  return (
     <motion.div
       className="h-full"
       initial={{ y: "-200vh" }}
@@ -27,7 +26,7 @@ const About = () => {
               to leave my mark on the digital landscape.
             </span>
             <span className="italic">
-              Creativity is intelligence having fun." - Albert Einstein
+              Creativity is intelligence having fun.&quot; - Albert Einstein
             </span>
           </div>
           <div className="flex flex-col justify-center gap-8">
@@ -138,14 +137,16 @@ const About = () => {
                 </div>
                 {/* Right */}
                 <div className="w-1/3">
-                  <Brain scrollYProgress={scrollYProgress}/>
+                  <Brain scrollYProgress={scrollYProgress} />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="hidden lg:block w-1/3 xl:w-1/2 z-30 sticky top-0"><Brain/></div>
+        <div className="hidden lg:block w-1/3 xl:w-1/2 z-30 sticky top-0">
+          <Brain />
+        </div>
       </div>
     </motion.div>
   );
