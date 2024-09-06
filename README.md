@@ -1,5 +1,9 @@
 # 💫 About Me:
-I am learning node js <br>
+Hi, I'm Minilik, a recent graduate in Software Engineering with a passion for building cutting-edge applications. I specialize in Flutter for mobile app development and have extensive experience working with React and Next.js for web development. My journey in tech has been driven by a curiosity for learning new technologies and solving real-world problems through code.
+
+In addition to my technical skills, I enjoy collaborating with teams, exploring new frameworks, and staying up-to-date with the latest trends in software development. I'm always looking for new challenges to push my boundaries and grow as a developer.
+
+Let's connect and build something great together! <br>
 
 
 ## 🌐 Socials:
