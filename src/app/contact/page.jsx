@@ -39,7 +39,7 @@ const Contact = () => {
             rows="5"
             className="text-black bg-transparent border resize-none border-black"
           >
-            {" "}
+            
             write ...
           </textarea>
           <input
