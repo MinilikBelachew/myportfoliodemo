@@ -74,33 +74,33 @@ const Navbar = () => {
           href="/"
           className="text-sm   hover:animate-bounce transition-transform bg-[#0268c7] rounded p-1 font-semibold flex items-center justify-center"
         >
-          <span className="text-white mr-1">Mila</span>
+          <span className="text-white mr-1">M</span>
           <span className="w-12 rounded bg-white flex items-center justify-center">
-            Boss
+            B
           </span>
         </Link>
       </div>
       <div className="hidden md:flex gap-2 w-1/3">
-        <Link href="/https://github.com/MinilikBelachew/Big-data-assignment.git">
+        <Link href="https://github.com/MinilikBelachew">
           <Image src="/github.png" alt="not avaliable" width={25} height={25} />
         </Link>
-        <Link href="/">
+        {/* <Link href="/">
           <Image
             src="/instagram.png"
             alt="not avaliable"
             width={25}
             height={25}
           />
-        </Link>
-        <Link href="/https://tailwindcss.com/docs/animation">
+        </Link> */}
+        {/* <Link href="/https://tailwindcss.com/docs/animation">
           <Image
             src="/facebook.png"
             alt="not avaliable"
             width={25}
             height={25}
           />
-        </Link>
-        <Link href="/">
+        </Link> */}
+        <Link href="https://www.linkedin.com/in/minilik-belachew-37a211263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
           <Image
             src="/linkedin.png"
             alt="not avaliable"
