@@ -1,8 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { FaJs, FaJava, FaReact, FaHtml5, FaCss3Alt, FaPython, FaDotNet } from "react-icons/fa"; // Importing the necessary icons
-
+import {
+  FaJs,
+  FaJava,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaPython,
+  FaDotNet,
+} from "react-icons/fa"; // Importing the necessary icons
 
 const About = () => {
   const containerRef = useRef();
@@ -35,15 +42,27 @@ const About = () => {
       variants={containerVariants}
     >
       <div className="container mx-auto px-4 sm:px-12 md:px-12 lg:px-20 xl:px-48 flex flex-col lg:flex-row gap-12">
-        
         {/* Biography Section */}
-        <motion.div className="lg:w-2/3 flex flex-col gap-8" variants={containerVariants}>
+        <motion.div
+          className="lg:w-2/3 flex flex-col gap-8"
+          variants={containerVariants}
+        >
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-extrabold text-gray-900">Biography</h2>
             <p className="mt-4 text-lg text-gray-800 leading-relaxed">
-            With a Bachelor’s degree in Software Engineering from Debre Birhan University, I am a passionate developer eager to create impactful digital solutions. My journey began with a fascination for the intersection of technology and creativity, which led me to master a wide range of programming languages and frameworks. Today, I specialize in React, JavaScript, with additional expertise in Flutter and Next.js. I thrive in collaborative environments, using my technical skills and problem-solving abilities to bring ideas to life.            </p>
+              With a Bachelor’s degree in Software Engineering from Debre Birhan
+              University, I am a passionate developer eager to create impactful
+              digital solutions. My journey began with a fascination for the
+              intersection of technology and creativity, which led me to master
+              a wide range of programming languages and frameworks. Today, I
+              specialize in React, JavaScript, with additional expertise in
+              Flutter and Next.js. I thrive in collaborative environments, using
+              my technical skills and problem-solving abilities to bring ideas
+              to life.
+            </p>
             <p className="mt-2 text-lg italic text-gray-700">
-              "Creativity is intelligence having fun." - Albert Einstein
+              &quot;Creativity is intelligence having fun.&quot; - Albert
+              Einstein
             </p>
           </motion.div>
 
@@ -52,7 +71,7 @@ const About = () => {
             <h2 className="text-3xl font-extrabold text-gray-900">Skills</h2>
             <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
               {[
-                { name: "JavaScript", icon: "/icons/css.svg"},
+                { name: "JavaScript", icon: "/icons/css.svg" },
                 //{ name: "Java", icon: "/icons/java.svg" },
                 { name: "React", icon: "/icons/react.svg" },
                 { name: "Next.js", icon: "/icons/nextjs.svg" },
@@ -74,7 +93,9 @@ const About = () => {
                     className="w-12 h-12 mb-2"
                     variants={floatingIcon}
                   />
-                  <span className="mt-2 text-gray-900 font-semibold">{skill.name}</span>
+                  <span className="mt-2 text-gray-900 font-semibold">
+                    {skill.name}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -100,12 +121,6 @@ const About = () => {
 };
 
 export default About;
-
-
-
-
-
-
 
 // <div className="flex flex-col justify-center gap-8 pb-48">
 //             <h1 className="font-bold text-2xl">Experience</h1>
