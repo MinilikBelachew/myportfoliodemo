@@ -3,43 +3,44 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+
 const items = [
   {
     id: 1,
     color: "from-red-300 to-blue-300",
-    title: "React Commerce",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "Simple Recipes Site",
+    desc: "streamlined recipe site designed to make cooking easy. It provides clear, step-by-step instructions and concise ingredient lists, helping users create delicious meals with minimal effort",
+    img: "/recipes.png",
+    link: "https://simple-recipesite.netlify.app/",
   },
   {
     id: 2,
     color: "from-blue-300 to-violet-300",
-    title: "Next.js Medium Blog",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "Homeland Logistics",
+    desc: "Homeland Logistics is a comprehensive cargo transportation solution featuring mobile apps for users, drivers, and car owners. The project streamlines logistics by connecting shippers with drivers and vehicle owners, enabling efficient and transparent cargo management. ",
+    img: "/user1.jpg",
+    link: "https://github.com/MinilikBelachew/Homeland_driver",
   },
   {
     id: 3,
     color: "from-violet-300 to-purple-300",
-    title: "Vanilla Book App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "Homeland Logistics Admin",
+    desc: "The Homeland Logistics Admin Dashboard is a centralized platform for overseeing cargo operations. It provides admins with tools to manage users, drivers, vehicle owners, and shipments, ensuring smooth and efficient logistics management across the system.",
+    img: "/admin.png",
+    link: "https://homelandad.netlify.app/auth/signin",
   },
   {
     id: 4,
     color: "from-purple-300 to-red-300",
-    title: "Spotify Music App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    link: "https://lama.dev",
+    title: "Task Management Site",
+    desc: "A Task Management site designed for efficient organization, allowing users to add, update, and delete tasks easily. The platform simplifies task tracking and enhances productivity with a clean, user-friendly interface.",
+    img: "/task.png",
+    link: "https://github.com/MinilikBelachew/ethio-task",
   },
 ];
+
 const Portfolio = () => {
   const ref = useRef();
-
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
@@ -50,61 +51,81 @@ const Portfolio = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex text-black items-center justify-center text-8xl text-center">
+      <div
+        className="h-[600vh] relative bg-gradient-to-br from-purple-600 via-indigo-500 to-blue-400"
+        ref={ref}
+      >
+        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center font-bold text-black">
           My Works
         </div>
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
             {items.map((item) => (
-              <div
-                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
+              <motion.div
                 key={item.id}
+                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color} transition-transform duration-500`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
               >
-                <div className="flex flex-col gap-8 text-white">
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl text-black">
+                <div className="flex flex-col gap-6 text-white p-6 rounded-lg shadow-2xl hover:shadow-xl transition-shadow duration-300 max-w-lg text-center">
+                  <motion.h1
+                    className="text-4xl font-bold md:text-5xl lg:text-6xl text-black"
+                    whileHover={{ scale: 1.05 }}
+                  >
                     {item.title}
-                  </h1>
-                  <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-                    <Image src={item.img} alt="" fill />
-                  </div>
-                  <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] text-black">
-                    {item.desc}
-                  </p>
-                  <Link href={item.link} className="flex justify-end">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">See Demo</button>
+                  </motion.h1>
+                  <motion.div
+                    className="relative w-full h-64 overflow-hidden rounded-lg shadow-lg"
+                    whileHover={{ scale: 1.03 }}
+                  >
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                  <p className="text-lg lg:text-xl text-black">{item.desc}</p>
+                  <Link href={item.link}>
+                    <motion.button
+                      className="p-4 bg-white text-gray-600 font-semibold rounded transition-transform duration-300 transform hover:scale-105"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      See Demo
+                    </motion.button>
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
       <div className="w-screen h-screen bg-white flex flex-col gap-16 items-center justify-center text-center">
-        <h1 className="text-8xl ">Do you have a project?</h1>
+        <h1 className="text-6xl font-bold">Do you have a project?</h1>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}
             transition={{ duration: 8, ease: "linear", repeat: Infinity }}
             viewBox="0 0 300 300"
-            className="w-64 h-64 md:w-[500px] md:h-[500px] text-white "
+            className="w-64 h-64 md:w-[500px] md:h-[500px] text-white"
           >
             <defs>
               <path
                 id="circlePath"
-                d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
+                d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0"
               />
             </defs>
-            <text  fill="#000">
+            <text fill="#000">
               <textPath xlinkHref="#circlePath" className="text-xl text-white">
-                Front-end Developer and UI Designer
+                Software Engineer 
               </textPath>
             </text>
           </motion.svg>
           <Link
             href="/contact"
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
+            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:scale-110"
           >
             Hire Me
           </Link>
@@ -113,5 +134,5 @@ const Portfolio = () => {
     </motion.div>
   );
 };
-  export default Portfolio;
-  
+
+export default Portfolio;

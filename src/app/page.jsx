@@ -1,51 +1,46 @@
 "use client";
 import Particle from "@/components/particle";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const Home = () => {
   return (
-    <motion.div
-      className="h-full"
-      initial={{ y: "-200vh" }}
-      animate={{ y: "0%" }}
-      transition={{ duration: 1 }}
-    >
-      <div className="lg:flex-row flex h-full flex-col px-4 sm:px-12 md:px-12 lg:px-20 xl:px-48">
-        <div className="h-1/2 lg:h-full lg:w-1/2 relative">
-          <Particle />
-          <Image src="/hero.png" alt="" fill className="object-contain" />
+    <div className="h-full bg-gradient-to-br from-purple-600 via-indigo-500 to-blue-400 relative overflow-hidden">
+      <Particle /> {/* Particle component with enhancements */}
+      <div className="lg:flex-row flex h-full flex-col px-4 sm:px-12 md:px-12 lg:px-20 xl:px-48 gap-8 items-center">
+        {/* Hero Image Section */}
+        <div className="h-1/2 lg:h-full lg:w-1/2 relative group overflow-hidden">
+          <Image
+            src="/bf.png"
+            alt="Hero Image"
+            fill
+            className=" bg-transparent object-contain rounded-2xl shadow-lg transform transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1"
+          />
         </div>
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col text-black items-center justify-center gap-4">
-          <h1 className="text-2xl font-extrabold md:text-4xl">
+
+        {/* Text Content Section */}
+        <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col text-white items-center justify-center gap-6 text-center">
+          <h1 className="text-4xl font-extrabold md:text-6xl tracking-wide drop-shadow-lg">
             Crafting Code, Building Dreams
           </h1>
-          <p className="md:text-xl">
-            Welcome to my digital playground, where lines of code come to life
-            and dreams find their digital form. As a passionate software
-            developer, I specialize in transforming innovative ideas into
-            functional and elegant solutions. With a keen eye for detail and a
-            relentless pursuit of excellence, I strive to create software that
-            not only meets but exceeds expectations. In my journey as a software
-            developer, I have delved deep into the realms of web development,
-            mobile applications, and beyond. From front-end magic to back-end
-            wizardry, I thrive on the challenges that coding presents,
-            constantly pushing the boundaries of what is possible.
-          </p>
-          <div className="w-full flex gap-4">
-            <button className="bg-blue-200 p-4 rounded-lg ring-2 ring-black">
-              {" "}
-              View My Work
-            </button>
+          <p className="md:text-lg lg:text-xl leading-relaxed max-w-lg text-gray-200 font-light drop-shadow-md">
+          Building seamless digital experiences with passion and precision. Let’s turn ideas into impactful solutions.
 
-            <button className="p-4 rounded-lg ring-2 ring-black">
-              {" "}
+          </p>
+
+          {/* Call to Action Buttons */}
+          <div className="flex gap-4 w-full justify-center mt-6">
+          <Link href="/portfolio" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-8 rounded-full font-semibold shadow-lg transform transition hover:shadow-2xl hover:scale-105">
+              My Work
+            </Link>
+            <Link href="/contact" className="bg-gradient-to-r from-gray-200 to-white text-black py-3 px-8 rounded-full font-semibold shadow-lg transform transition hover:shadow-2xl hover:scale-105">
               Contact Me
-            </button>
+            </Link>
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
+
 export default Home;
