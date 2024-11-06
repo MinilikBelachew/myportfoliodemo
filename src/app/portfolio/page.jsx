@@ -71,7 +71,7 @@ const Portfolio = () => {
               >
                 <div className="flex flex-col gap-6 text-white p-6 rounded-lg shadow-2xl hover:shadow-xl transition-shadow duration-300 max-w-lg text-center">
                   <motion.h1
-                    className="text-4xl font-bold md:text-5xl lg:text-6xl text-black"
+                    className="text-4xl font-bold md:text-3xl lg:text-4xl text-black"
                     whileHover={{ scale: 1.05 }}
                   >
                     {item.title}
